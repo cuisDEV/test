@@ -15,6 +15,6 @@ app.use("/api/products", productRoutes);
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
     console.log("✅ Connecté à MongoDB Atlas");
-    app.listen(5000, () => console.log("🚀 Backend sur http://localhost:5000"));
-  })
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`🚀 Backend en ligne sur le port ${PORT}`));  })
   .catch(err => console.error("Erreur MongoDB:", err));

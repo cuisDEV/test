@@ -7,7 +7,7 @@ function AddProduct() {
   const [message, setMessage] = useState("");
 
   // 🧠 Définir automatiquement l’URL du backend
-  const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
+  const API_URL = process.env.REACT_APP_API_URL;
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });

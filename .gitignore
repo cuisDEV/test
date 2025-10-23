@@ -1,0 +1,18 @@
+# Node.js
+node_modules/
+.env
+.env.local
+dist/
+build/
+.DS_Store
+
+# Logs
+logs
+*.log
+
+# Vite / React cache
+.vite/
+.cache/
+
+# Optional OS files
+Thumbs.db
