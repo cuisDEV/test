@@ -6,6 +6,9 @@ function AddProduct() {
   const [form, setForm] = useState({ name: "", price: "", description: "" });
   const [message, setMessage] = useState("");
 
+  // 🧠 Définir automatiquement l’URL du backend
+  const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
+
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
@@ -13,10 +16,11 @@ function AddProduct() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/products", form);
+      await axios.post(`${API_URL}/api/products`, form);
       setMessage("✅ Produit ajouté avec succès !");
       setForm({ name: "", price: "", description: "" });
     } catch (err) {
+      console.error(err);
       setMessage("❌ Erreur lors de l’ajout du produit.");
     }
   };
